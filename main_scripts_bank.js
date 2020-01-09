@@ -5,8 +5,13 @@ function isMobile_check(){
     return "click"
   } else {return "touchstart"}
 } 
-catch (err) {} };  
-
+catch (err) {} };
+var bank_list = {
+    bank_1: "sberbank",
+    bank_2: "alfabank",
+    bank_3: "citibank",
+    bank_4: "smpbank"
+};
 (function() {
     try {
         document.body.addEventListener(isMobile_check(), function(event) {
@@ -38,7 +43,7 @@ catch (err) {} };
                                         eventCategory: "afl-bonus_cobrand-bank",
                                         eventAction: "cobrand-bank_click_button_footer-join_afl_bonus_programme",
                                         eventLabel: "from_" + location.href 
-                                          
+
                                                 })
                                             }
                         else if (elem.classList[1] == "bank_img"){
@@ -60,7 +65,18 @@ catch (err) {} };
                                             "name-card": elem.textContent       
                                                     })
                                                   })
-                        };
+                        } else if (elem.classList[0] == "r-tabs-anchor" && isMobile!=null){
+                         var id_elem = elem.getAttribute("href");
+                         var id_bank = document.querySelector(id_elem).getAttribute("id")                            
+                        dataLayerSU.push({
+                                         event: {{AFL.Constant.autoEvent.78-1}},
+                                         eventCategory: "afl-bonus_cobrand-bank",
+                                         eventAction: "cobrand-bank_click_button_tab-select_bank",
+                                         eventLabel: JSON.stringify({
+                                            "name-bank": bank_list.id_bank 
+                                                    })
+                                                  })
+                        }
                     elem = elem.parentNode;
 
                 } else if (elem.tagName.toLowerCase().trim() == "img" && elem.parentNode.classList[1] == "bank_img") {
