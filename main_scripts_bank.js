@@ -65,9 +65,18 @@ var bank_list = {
                                             "name-card": elem.textContent       
                                                     })
                                                   })
-                        } else if (elem.classList[0] == "r-tabs-anchor" && isMobile!=null){
+                        } else if (elem.classList[0] == "r-tabs-anchor" && isMobile!=null && elem.parentNode.className != "r-tabs-accordion-title" ){
                          var id_elem = elem.getAttribute("href");
                          var id_bank = document.querySelector(id_elem).getAttribute("id")                            
+                        dataLayerSU.push({
+                                         event: "AeroinformEvent_78_1",
+                                         eventCategory: "afl-bonus_cobrand-bank",
+                                         eventAction: "cobrand-bank_click_button_tab-select_bank",
+                                         eventLabel: JSON.stringify({
+                                            "name-bank": bank_list[id_bank],
+                                                    })
+                                                  })
+                        } else if (elem.classList[0] == "r-tabs-anchor" && isMobile!=null && elem.parentNode.className == "r-tabs-accordion-title"){                         
                         dataLayerSU.push({
                                          event: "AeroinformEvent_78_1",
                                          eventCategory: "afl-bonus_cobrand-bank",
