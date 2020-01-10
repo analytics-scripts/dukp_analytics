@@ -21,7 +21,7 @@ var bank_list = {
                       if (elem.className == "registration_btn"){
                         var url_bank = elem.href.replace(/^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?/,'$3');
                         dataLayerSU.push({
-                                        event: {{AFL.Constant.autoEvent.78-1}},
+                                        event: "AeroinformEvent_78_1",
                                         eventCategory: "afl-bonus_cobrand-bank",
                                         eventAction: "cobrand-bank_click_button_order_card-" + url_bank,
                                         eventLabel: JSON.stringify({
@@ -32,14 +32,14 @@ var bank_list = {
                                             }
                         else if (elem.className == "card_btn"){
                          dataLayerSU.push({
-                                        event: {{AFL.Constant.autoEvent.78-1}},
+                                        event: "AeroinformEvent_78_1",
                                         eventCategory: "afl-bonus_cobrand-bank",
                                         eventAction: "cobrand-bank_click_button_header-select_card"
                                                 })
                                             }
                         else if (elem.className == "program_btn"){
                          dataLayerSU.push({
-                                        event: {{AFL.Constant.autoEvent.78-1}},
+                                        event: "AeroinformEvent_78_1",
                                         eventCategory: "afl-bonus_cobrand-bank",
                                         eventAction: "cobrand-bank_click_button_footer-join_afl_bonus_programme",
                                         eventLabel: "from_" + location.href 
@@ -48,7 +48,7 @@ var bank_list = {
                                             }
                         else if (elem.classList[1] == "bank_img"){
                          dataLayerSU.push({
-                                        event: {{AFL.Constant.autoEvent.78-1}},
+                                        event: "AeroinformEvent_78_1",
                                         eventCategory: "afl-bonus_cobrand-bank",
                                         eventAction: "cobrand-bank_click_button_tab-select_bank",
                                         eventLabel: JSON.stringify({
@@ -57,7 +57,7 @@ var bank_list = {
                                             }
                         else if (elem.classList[0] == "r-tabs-anchor" && isMobile==null){
                         dataLayerSU.push({
-                                         event: {{AFL.Constant.autoEvent.78-1}},
+                                         event: "AeroinformEvent_78_1",
                                          eventCategory: "afl-bonus_cobrand-bank",
                                          eventAction: "cobrand-bank_click_button_tab-select_card",
                                          eventLabel: JSON.stringify({
@@ -69,7 +69,7 @@ var bank_list = {
                          var id_elem = elem.getAttribute("href");
                          var id_bank = document.querySelector(id_elem).getAttribute("id")                            
                         dataLayerSU.push({
-                                         event: {{AFL.Constant.autoEvent.78-1}},
+                                         event: "AeroinformEvent_78_1",
                                          eventCategory: "afl-bonus_cobrand-bank",
                                          eventAction: "cobrand-bank_click_button_tab-select_bank",
                                          eventLabel: JSON.stringify({
@@ -81,7 +81,7 @@ var bank_list = {
 
                 } else if (elem.tagName.toLowerCase().trim() == "img" && elem.parentNode.classList[1] == "bank_img") {
                           dataLayerSU.push({
-                                         event: {{AFL.Constant.autoEvent.78-1}},
+                                         event: "AeroinformEvent_78_1",
                                          eventCategory: "afl-bonus_cobrand-bank",
                                          eventAction: "cobrand-bank_click_button_tab-select_bank",
                                          eventLabel: JSON.stringify({
