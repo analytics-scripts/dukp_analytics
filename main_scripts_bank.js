@@ -71,9 +71,10 @@ var bank_list = {
                         dataLayerSU.push({
                                          event: "AeroinformEvent_78_1",
                                          eventCategory: "afl-bonus_cobrand-bank",
-                                         eventAction: "cobrand-bank_click_button_tab-select_bank",
+                                         eventAction: "cobrand-bank_click_button_tab-select_card",
                                          eventLabel: JSON.stringify({
-                                            "name-bank": bank_list.id_bank 
+                                            "name-bank": bank_list[id_bank],
+                                            "name-card": elem.textContent 
                                                     })
                                                   })
                         }
